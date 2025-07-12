@@ -37,12 +37,12 @@ const Cabecalho: React.FC = () => {
     <StyledHeader>
       <Logo src={smart_logo} alt="Logo Smart Shop" />
       <div>
-        <BtnCabecalho primary href="https://google.com">
+        {/* <BtnCabecalho primary href="https://google.com">
           Ajuda
         </BtnCabecalho>
         <BtnCabecalho href="https://google.com">
           Sair
-        </BtnCabecalho>
+        </BtnCabecalho> */}
       </div>
     </StyledHeader>
   );

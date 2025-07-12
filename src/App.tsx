@@ -6,7 +6,6 @@ import { GlobalStyle } from './Components/GloblaStyle';
 import { BtnTema } from './Components/UI';
 import SwitcherTema from './SwitcherTema';
 import Container from './Components/Container';
-
 function App() {
 
   const [tema, setTema] = useState(true);
@@ -17,14 +16,14 @@ function App() {
 
   return (
 
-      <ThemeProvider theme={tema ? temaClaro : temaEscuro}>
-        <GlobalStyle />
-        <BtnTema onClick={toggleTema}>
+    <ThemeProvider theme={tema ? temaClaro : temaEscuro}>
+      <GlobalStyle />
+      <BtnTema onClick={toggleTema}>
         <SwitcherTema tema={tema} />
       </BtnTema>
       <Cabecalho />
       <Container />
-      </ThemeProvider>
+    </ThemeProvider>
   );
 }
 

@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Titulo from "../Titulo";
+import Home from "../../pages/Home";
+import Favorites from "../../pages/Favorites";
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.body};
@@ -19,8 +21,8 @@ export default () => {
   return (
     <Container><Titulo>Olá Fulano!</Titulo>
       <Conteudo>
-        <p>Bem-vindo à Smart Shop, a sua loja de tecnologia Explore nossos produtos e aproveite as melhores ofertas. Explore nossos produtos e aproveite as melhores ofertas!</p>
-        <p>Explore nossos produtos e aproveite as melhores ofertas.</p>
+        <Home />
+        <Favorites />
       </Conteudo>
     </Container>
   );
