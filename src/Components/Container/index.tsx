@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Titulo from "../Titulo";
 import Home from "../../pages/Home";
 import Favorites from "../../pages/Favorites";
+import Footer from "../Footer";
 
 const Container = styled.div`
   background-color: ${({ theme }) => theme.body};
@@ -19,11 +20,14 @@ const Conteudo = styled.section`
 `
 export default () => {
   return (
-    <Container><Titulo>Olá Fulano!</Titulo>
-      <Conteudo>
-        <Home />
-        <Favorites />
-      </Conteudo>
-    </Container>
+    <>
+      <Container><Titulo>Olá Fulano!</Titulo>
+        <Conteudo>
+          <Home />
+          <Favorites />
+        </Conteudo>
+      </Container>
+      <Footer />
+    </>
   );
 };
