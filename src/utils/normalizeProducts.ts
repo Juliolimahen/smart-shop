@@ -1,6 +1,6 @@
 import type { Product } from '../types';
-import { parsePrice } from '../utils/parsePrice';
-import { normalizeVariations } from '../utils/normalizeVariations';
+import { parsePrice } from './parsePrice';
+import { normalizeVariations } from './normalizeVariations';
 
 export const normalizeProducts = (products: unknown[]): Product[] => {
   if (!Array.isArray(products)) return [];
@@ -10,8 +10,8 @@ export const normalizeProducts = (products: unknown[]): Product[] => {
       id: -1,
       nome: 'nome desconhecido',
       categorias: [],
-      preco: 'preço não disponivel',
-      descricao: 'descrição não disponivel',
+      preco: 'preço não disponível',
+      descricao: 'descrição não disponível',
       variacao: []
     };
 
