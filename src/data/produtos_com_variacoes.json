@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "nome": "",
+    "nome": "Produto 1",
     "categorias": [
       5,
       10,
       9
     ],
     "preco": "422",
-    "descricao": "",
+    "descricao": "Descrição do produto 1.",
     "variacao": [
       {
         "estoque": "sim",
@@ -51,7 +51,7 @@
     "categorias": [
       5
     ],
-    "preco": "",
+    "preco": "402",
     "descricao": "Descrição do produto 2.",
     "variacao": [
       {
@@ -97,7 +97,7 @@
       1,
       4
     ],
-    "preco": "",
+    "preco": "1252",
     "descricao": "Descrição do produto 3.",
     "variacao": [
       {
