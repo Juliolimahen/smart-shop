@@ -1,13 +1,34 @@
+import React from 'react';
+import { getAllCategories } from '../../api/categories';
+import { Tab, TabsContainer, TabsWrapper } from './styles';
 
-const CategoryTabs = () => {
-
-    return (
-        <>
-            <h2>Categoria 1</h2>
-            <h2>Categoria 2</h2>
-            <h2>Categoria 3</h2>
-        </>
-    )
+interface Props {
+  activeCategory: number | null;
+  onSelectCategory: (id: number | null) => void;
 }
 
-export default CategoryTabs;
+export const CategoryTabs: React.FC<Props> = ({ activeCategory, onSelectCategory }) => {
+  const categories = getAllCategories();
+
+  return (
+    <TabsWrapper>
+      <TabsContainer>
+        <Tab
+          $active={activeCategory === null}
+          onMouseEnter={() => onSelectCategory(null)}
+        >
+          Todas as Categorias
+        </Tab>
+        {categories.map(category => (
+          <Tab
+            key={category.id}
+            $active={activeCategory === category.id}
+            onMouseEnter={() => onSelectCategory(category.id)}
+          >
+            {category.nome}
+          </Tab>
+        ))}
+      </TabsContainer>
+    </TabsWrapper>
+  );
+};
