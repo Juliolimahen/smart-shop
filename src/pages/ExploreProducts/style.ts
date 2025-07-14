@@ -24,5 +24,5 @@ export const Alert = styled.p`
 `;
 
 export const Container = styled.div`
-  padding: '25px';
+  padding: 25px;
 `;

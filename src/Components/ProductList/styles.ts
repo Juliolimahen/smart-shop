@@ -4,6 +4,7 @@ export const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 24px;
+  padding-top: 10px;
   padding-bottom: 40px;
 
   @media (min-width: 768px) {
