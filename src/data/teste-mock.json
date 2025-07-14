@@ -1,0 +1,431 @@
+[
+  {
+    "id": 1,
+    "nome": "Produto 1",
+    "categorias": [
+      5,
+      10,
+      9
+    ],
+    "preco": "422",
+    "descricao": "Descrição do produto 1.",
+    "variacao": [
+      {
+        "estoque": "sim",
+        "vendedor": "Loja2",
+        "fabricante": "Samsung",
+        "cor": "Preto",
+        "voltagem": "220V",
+        "tamanho": "P",
+        "garantia": "6 meses",
+        "peso": "9kg",
+        "dimensoes": null
+      },
+      {
+        "estoque": "sim",
+        "vendedor": "MegaStore",
+        "fabricante": "Consul",
+        "cor": "Azul",
+        "voltagem": "Bivolt",
+        "tamanho": "P",
+        "garantia": "1 ano",
+        "peso": "10kg",
+        "dimensoes": null
+      },
+      {
+        "estoque": "sim",
+        "vendedor": "Loja2",
+        "fabricante": "Samsung",
+        "cor": "Azul",
+        "voltagem": "220V",
+        "tamanho": "G",
+        "garantia": "1 ano",
+        "peso": null,
+        "dimensoes": "22x16x92cm"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nome": null,
+    "categorias": [
+      5
+    ],
+    "preco": "402",
+    "descricao": "Descrição do produto 2.",
+    "variacao": [
+      {
+        "estoque": "sim",
+        "vendedor": "MegaStore",
+        "fabricante": "Nike",
+        "cor": "Vermelho",
+        "voltagem": "110V",
+        "tamanho": "G",
+        "garantia": "6 meses",
+        "peso": null,
+        "dimensoes": null
+      },
+      {
+        "estoque": "não",
+        "vendedor": "EletroShop",
+        "fabricante": "Consul",
+        "cor": "Vermelho",
+        "voltagem": "220V",
+        "tamanho": "M",
+        "garantia": "1 ano",
+        "peso": null,
+        "dimensoes": "53x81x39cm"
+      },
+      {
+        "estoque": "não",
+        "vendedor": "MegaStore",
+        "fabricante": "LG",
+        "cor": "Verde",
+        "voltagem": "Bivolt",
+        "tamanho": "G",
+        "garantia": "2 anos",
+        "peso": null,
+        "dimensoes": null
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nome": "Produto 3",
+    "categorias": [
+      8,
+      1,
+      4
+    ],
+    "preco": "1252",
+    "descricao": "Descrição do produto 3.",
+    "variacao": [
+      {
+        "estoque": "não",
+        "vendedor": "Loja1",
+        "fabricante": "Electrolux",
+        "cor": "Branco",
+        "voltagem": "110V",
+        "tamanho": "P",
+        "garantia": "1 ano",
+        "peso": null,
+        "dimensoes": null
+      },
+      {
+        "estoque": "sim",
+        "vendedor": "MegaStore",
+        "fabricante": "Nike",
+        "cor": "Verde",
+        "voltagem": "110V",
+        "tamanho": "P",
+        "garantia": "2 anos",
+        "peso": null,
+        "dimensoes": null
+      },
+      {
+        "estoque": "não",
+        "vendedor": "MegaStore",
+        "fabricante": "Electrolux",
+        "cor": "Amarelo",
+        "voltagem": "Bivolt",
+        "tamanho": "P",
+        "garantia": "6 meses",
+        "peso": "3kg",
+        "dimensoes": null
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nome": "Produto 4",
+    "categorias": [
+      5,
+      9,
+      3
+    ],
+    "preco": "301",
+    "descricao": "Descrição do produto 4.",
+    "variacao": [
+      {
+        "estoque": "sim",
+        "vendedor": "EletroShop",
+        "fabricante": "Samsung",
+        "cor": "Preto",
+        "voltagem": "110V",
+        "tamanho": "P",
+        "garantia": "1 ano",
+        "peso": "25kg",
+        "dimensoes": "26x97x13cm"
+      },
+      {
+        "estoque": "sim",
+        "vendedor": "Loja1",
+        "fabricante": "Samsung",
+        "cor": "Vermelho",
+        "voltagem": "110V",
+        "tamanho": "P",
+        "garantia": "1 ano",
+        "peso": "18kg",
+        "dimensoes": "46x94x19cm"
+      },
+      {
+        "estoque": "não",
+        "vendedor": "Loja1",
+        "fabricante": "Nike",
+        "cor": "Branco",
+        "voltagem": "220V",
+        "tamanho": "G",
+        "garantia": "1 ano",
+        "peso": null,
+        "dimensoes": null
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "nome": "Produto 5",
+    "categorias": [
+      8
+    ],
+    "preco": null,
+    "descricao": "Descrição do produto 5.",
+    "variacao": [
+      {
+        "estoque": "sim",
+        "vendedor": "Loja1",
+        "fabricante": "Consul",
+        "cor": "Amarelo",
+        "voltagem": "Bivolt",
+        "tamanho": "M",
+        "garantia": "1 ano",
+        "peso": "3kg",
+        "dimensoes": "41x59x82cm"
+      },
+      {
+        "estoque": "não",
+        "vendedor": "MegaStore",
+        "fabricante": "Sony",
+        "cor": "Vermelho",
+        "voltagem": "220V",
+        "tamanho": "M",
+        "garantia": "2 anos",
+        "peso": null,
+        "dimensoes": null
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "nome": "Produto 6",
+    "categorias": [
+      4
+    ],
+    "preco": "1372",
+    "descricao": "Descrição do produto 6.",
+    "variacao": [
+      {
+        "estoque": "não",
+        "vendedor": "TopSeller",
+        "fabricante": "Samsung",
+        "cor": "Branco",
+        "voltagem": "220V",
+        "tamanho": "P",
+        "garantia": "2 anos",
+        "peso": "16kg",
+        "dimensoes": "95x22x22cm"
+      },
+      {
+        "estoque": "não",
+        "vendedor": "EletroShop",
+        "fabricante": "Consul",
+        "cor": "Azul",
+        "voltagem": "Bivolt",
+        "tamanho": "G",
+        "garantia": "1 ano",
+        "peso": null,
+        "dimensoes": "20x97x42cm"
+      },
+      {
+        "estoque": "não",
+        "vendedor": "Loja2",
+        "fabricante": "Electrolux",
+        "cor": "Branco",
+        "voltagem": "110V",
+        "tamanho": "P",
+        "garantia": "2 anos",
+        "peso": "13kg",
+        "dimensoes": null
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "nome": "Produto 7",
+    "categorias": [
+      9,
+      10
+    ],
+    "preco": 0,
+    "descricao": "Descrição do produto 7.",
+    "variacao": [
+      {
+        "estoque": "não",
+        "vendedor": "MegaStore",
+        "fabricante": "LG",
+        "cor": "Vermelho",
+        "voltagem": "Bivolt",
+        "tamanho": "P",
+        "garantia": "1 ano",
+        "peso": null,
+        "dimensoes": "29x18x45cm"
+      },
+      {
+        "estoque": "sim",
+        "vendedor": "Loja2",
+        "fabricante": "Sony",
+        "cor": "Branco",
+        "voltagem": "110V",
+        "tamanho": "P",
+        "garantia": "2 anos",
+        "peso": null,
+        "dimensoes": null
+      },
+      {
+        "estoque": "não",
+        "vendedor": "MegaStore",
+        "fabricante": "Electrolux",
+        "cor": "Azul",
+        "voltagem": "Bivolt",
+        "tamanho": "P",
+        "garantia": "1 ano",
+        "peso": "19kg",
+        "dimensoes": null
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "nome": "Produto 8",
+    "categorias": [
+      2,
+      6
+    ],
+    "preco": "1710",
+    "descricao": "Descrição do produto 8.",
+    "variacao": [
+      {
+        "estoque": "sim",
+        "vendedor": "EletroShop",
+        "fabricante": "LG",
+        "cor": "Branco",
+        "voltagem": "220V",
+        "tamanho": "G",
+        "garantia": "1 ano",
+        "peso": "6kg",
+        "dimensoes": "94x68x40cm"
+      },
+      {
+        "estoque": "sim",
+        "vendedor": "EletroShop",
+        "fabricante": "Consul",
+        "cor": "Branco",
+        "voltagem": "220V",
+        "tamanho": "M",
+        "garantia": "6 meses",
+        "peso": "7kg",
+        "dimensoes": null
+      },
+      {
+        "estoque": "não",
+        "vendedor": "Loja2",
+        "fabricante": "Sony",
+        "cor": "Verde",
+        "voltagem": "Bivolt",
+        "tamanho": "P",
+        "garantia": "6 meses",
+        "peso": null,
+        "dimensoes": "57x30x68cm"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "nome": null,
+    "categorias": [
+      1,
+      7
+    ],
+    "preco": null,
+    "descricao": "Descrição do produto 9.",
+    "variacao": [
+      {
+        "estoque": "não",
+        "vendedor": "Loja2",
+        "fabricante": "LG",
+        "cor": "Preto",
+        "voltagem": "Bivolt",
+        "tamanho": "G",
+        "garantia": "1 ano",
+        "peso": null,
+        "dimensoes": null
+      },
+      {
+        "estoque": "não",
+        "vendedor": "MegaStore",
+        "fabricante": "Samsung",
+        "cor": "Branco",
+        "voltagem": "220V",
+        "tamanho": "G",
+        "garantia": "6 meses",
+        "peso": null,
+        "dimensoes": "71x62x57cm"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "nome": "Produto 10",
+    "categorias": [
+      1,
+      5,
+      7
+    ],
+    "preco": "3331",
+    "descricao": "Descrição do produto 10.",
+    "variacao": [
+      {
+        "estoque": "sim",
+        "vendedor": "TopSeller",
+        "fabricante": "Consul",
+        "cor": "Azul",
+        "voltagem": "220V",
+        "tamanho": "P",
+        "garantia": "2 anos",
+        "peso": null,
+        "dimensoes": null
+      },
+      {
+        "estoque": "não",
+        "vendedor": "TopSeller",
+        "fabricante": "Sony",
+        "cor": "Vermelho",
+        "voltagem": "110V",
+        "tamanho": "G",
+        "garantia": "1 ano",
+        "peso": null,
+        "dimensoes": null
+      },
+      {
+        "estoque": "não",
+        "vendedor": "EletroShop",
+        "fabricante": "Samsung",
+        "cor": "Amarelo",
+        "voltagem": "Bivolt",
+        "tamanho": "G",
+        "garantia": "2 anos",
+        "peso": null,
+        "dimensoes": "79x77x23cm"
+      }
+    ]
+  }
+]
