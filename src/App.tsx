@@ -1,30 +1,28 @@
-import { useState } from 'react';
-import { ThemeProvider } from "styled-components";
-import { temaClaro, temaEscuro } from "./Components/UI/temas"
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { temaClaro, temaEscuro } from './Components/UI/temas';
 import Cabecalho from './Components/Cabecalho';
+import Container from './Components/Container';
 import { GlobalStyle } from './Components/GloblaStyle';
 import { BtnTema } from './Components/UI';
 import SwitcherTema from './SwitcherTema';
-import Container from './Components/Container';
-function App() {
+import useTema from './hooks/useTema';
 
-  const [tema, setTema] = useState(true);
-
-  const toggleTema = () => {
-    setTema((tema) => !tema);
-  };
+const App: React.FC = () => {
+  const { tema, alternarTema } = useTema();
 
   return (
-
-    <ThemeProvider theme={tema ? temaClaro : temaEscuro}>
-      <GlobalStyle />
-      <BtnTema onClick={toggleTema}>
-        <SwitcherTema tema={tema} />
-      </BtnTema>
-      <Cabecalho />
-      <Container />
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={tema ? temaClaro : temaEscuro}>
+        <GlobalStyle />
+        <BtnTema onClick={alternarTema}>
+          <SwitcherTema tema={tema} />
+        </BtnTema>
+        <Cabecalho />
+        <Container />
+      </ThemeProvider>
+    </BrowserRouter>
   );
-}
+};
 
-export default App
+export default App;
