@@ -1,14 +1,13 @@
+import Titulo from "../../Components/Titulo";
 import ExploreProducts from "../ExploreProducts";
 
-const Home = () => {
+const Home: React.FC = () =>  {
 
     return (
-            <>
-                <h1>Bem-vindo à nossa loja!</h1>
-                <p>Explore nossos produtos e aproveite as melhores ofertas.</p>
-
-                <ExploreProducts></ExploreProducts>
-            </>
+        <>
+            <Titulo>Bem-vindo à nossa loja!</Titulo>
+            <ExploreProducts />
+        </>
     )
 }
 
