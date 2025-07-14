@@ -1,12 +1,83 @@
-import ProductList from "../../Components/ProductList";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import type { RootState } from '../../redux/store';
+import Pagination from '../../Components/Pagination';
+import ProductList from '../../Components/ProductList';
+import useAppDispatch from '../../hooks/useAppDispatch';
+import ProductSearch from '../../Components/ProductSearch';
+import { CategoryTabs } from '../../Components/CategoryTabs';
+import { ProductModal } from '../../Components/ProductModal';
+import { useLoadProducts } from '../../hooks/useLoadProducts';
+import { useFilteredProducts } from '../../hooks/useFilteredProducts';
+import OrderByPriceSelector from '../../Components/OrderByPriceSelector';
+import { FilterLeft, FilterRight, FilterRow, Alert, Container } from './style';
+import PriceRangeFilter from '../../Components/PriceRangeFilter/PriceRangeFilter';
+import {
+  setCategory,
+  setSearchTerm,
+  setPage,
+  setSelectedProduct
+} from '../../redux/explore/exploreSlice';
 
-const ExploreProducts = () => {
+const ExploreProducts: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const { category, searchTerm, currentPage, selectedProduct } = useSelector(
+    (state: RootState) => state.explore
+  );
 
-    return (
-        <>
-            <ProductList></ProductList>   
-        </>
-    )
-}
+  useLoadProducts();
+  const { paginated, totalPages } = useFilteredProducts();
+
+  const handlers = {
+    category: (id: number | null) => {
+      dispatch(setCategory(id));
+      dispatch(setPage(0));
+    },
+    search: (term: string) => {
+      dispatch(setSearchTerm(term));
+      dispatch(setPage(0));
+    },
+    page: (p: number) => dispatch(setPage(p)),
+    select: (product: any) => dispatch(setSelectedProduct(product)),
+    closeModal: () => dispatch(setSelectedProduct(null))
+  };
+
+  return (
+    <Container>
+      <ProductSearch searchTerm={searchTerm} onSearchChange={handlers.search} />
+
+      <CategoryTabs activeCategory={category} onSelectCategory={handlers.category} />
+
+      <FilterRow>
+        <FilterLeft>
+          <PriceRangeFilter />
+        </FilterLeft>
+        <FilterRight>
+          <OrderByPriceSelector />
+        </FilterRight>
+      </FilterRow>
+
+      {paginated.length === 0 ? (
+
+        <Alert>Nenhum produto disponível para os critérios atuais.</Alert>
+
+      ) : (
+        <ProductList products={paginated} onProductClick={handlers.select} />
+      )}
+
+      <Pagination
+        page={currentPage}
+        totalPages={totalPages}
+        isFirst={currentPage === 0}
+        isLast={currentPage === totalPages - 1}
+        onPageChange={handlers.page}
+      />
+
+      {selectedProduct && (
+        <ProductModal product={selectedProduct} onClose={handlers.closeModal} />
+      )}
+    </Container>
+  );
+};
 
 export default ExploreProducts;
