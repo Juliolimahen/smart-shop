@@ -1,19 +1,60 @@
+import React from 'react';
+import {
+  PaginationContainer,
+  PaginationButton,
+  PageInfo
+} from './style';
 
-const Pagination  = () => {
-
-    return (
-        <>
-            <nav>
-                <ul className="pagination">
-                    <li className="page-item"><a className="page-link" href="#">Previous</a></li>
-                    <li className="page-item"><a className="page-link" href="#">1</a></li>
-                    <li className="page-item"><a className="page-link" href="#">2</a></li>
-                    <li className="page-item"><a className="page-link" href="#">3</a></li>
-                    <li className="page-item"><a className="page-link" href="#">Next</a></li>
-                </ul>
-            </nav>
-        </>
-    )
+interface Props {
+  page: number;
+  totalPages: number;
+  isFirst: boolean;
+  isLast: boolean;
+  onPageChange: (newPage: number) => void;
 }
+
+const Pagination: React.FC<Props> = ({
+  page,
+  totalPages,
+  isFirst,
+  isLast,
+  onPageChange
+}) => {
+  return (
+    <PaginationContainer>
+      <PaginationButton
+        onClick={() => onPageChange(0)}
+        disabled={isFirst}
+      >
+        Primeira
+      </PaginationButton>
+
+      <PaginationButton
+        onClick={() => onPageChange(page - 1)}
+        disabled={isFirst}
+      >
+        Anterior
+      </PaginationButton>
+
+      <PageInfo>
+        Página {page + 1} de {totalPages}
+      </PageInfo>
+
+      <PaginationButton
+        onClick={() => onPageChange(page + 1)}
+        disabled={isLast}
+      >
+        Próxima
+      </PaginationButton>
+
+      <PaginationButton
+        onClick={() => onPageChange(totalPages - 1)}
+        disabled={isLast}
+      >
+        Última
+      </PaginationButton>
+    </PaginationContainer>
+  );
+};
 
 export default Pagination;
