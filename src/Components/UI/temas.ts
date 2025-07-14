@@ -28,3 +28,4 @@ export const temaEscuro: Tema = {
   text: textoFundoEscuro,
   filter: "invert(100%)",
 };
+

@@ -16,7 +16,13 @@ export const FilterLeft = styled.div`
 
 export const FilterRight = styled.div`
   width: 240px;
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
+    min-width: 100%;
+  }
 `;
+
 export const Alert = styled.p`
   margin: 0;
   font-size: 1.1rem;
