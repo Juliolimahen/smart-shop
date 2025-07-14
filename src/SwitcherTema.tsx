@@ -1,6 +1,6 @@
 import React from "react";
-import ThemeOn from "./assets/themeOn.svg";
-import ThemeOff from "./assets/themeOff.svg";
+import ThemeOn from "./assets/images/themeOn.svg";
+import ThemeOff from "./assets/images/themeOff.svg";
 import { Icone } from "./Components/UI";
 
 interface TemaIconeProps {
