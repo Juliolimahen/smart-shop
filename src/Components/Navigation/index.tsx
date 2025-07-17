@@ -11,7 +11,7 @@ const Navigation: React.FC = () => {
   const favorites = useSelector((state: RootState) => state.favorites.favorites);
   const favoriteCount = favorites.length;
 
-  const goTo = (path: string, state?: any) => {
+  const goTo = (path: string, state?: unknown) => {
     if (path === '/favoritos') saveExploreState();
     navigate(path, state ? { state } : undefined);
   };

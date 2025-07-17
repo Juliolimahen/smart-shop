@@ -4,5 +4,5 @@ import { createPersistedReducer } from './persistUtils';
 
 export const rootReducer = {
   explore: createPersistedReducer('explore', exploreReducer),
-  favorites: favoritesReducer
+  favorites: createPersistedReducer('favorites', favoritesReducer)
 };
