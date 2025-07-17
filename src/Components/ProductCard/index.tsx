@@ -32,10 +32,14 @@ export const ProductCard: React.FC<Props> = ({ product, onClick }) => {
   const handleToggleFavorite = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    favorite
-      ? dispatch(removeFavorite(product.id))
-      : dispatch(addFavorite(product));
+
+    if (favorite) {
+      dispatch(removeFavorite(product.id));
+    } else {
+      dispatch(addFavorite(product));
+    }
   };
+
 
   return (
     <Card onClick={() => onClick(product)} role="button" tabIndex={0}>

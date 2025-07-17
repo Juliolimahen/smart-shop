@@ -9,5 +9,8 @@ export const initialExploreState: ExploreState = {
   selectedProduct: null,
   minPrice: null,
   maxPrice: null,
-  orderByPrice: null
+  orderByPrice: null,
+  categories: [],
+  loadingCategories: false,
+  loadingProducts: false,
 };

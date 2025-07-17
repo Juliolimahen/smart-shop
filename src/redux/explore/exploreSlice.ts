@@ -1,11 +1,13 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import type { Category } from '../../types';
 import type { Product } from '../../types';
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { initialExploreState } from './exploreInitialState';
 import type {
   ProductsPayload,
   PriceRangePayload,
   FavoriteStatusPayload
 } from './exploreTypes';
-import { initialExploreState } from './exploreInitialState';
+
 
 const exploreSlice = createSlice({
   name: 'explore',
@@ -41,7 +43,16 @@ const exploreSlice = createSlice({
 
     setPage(state, action: PayloadAction<number>) {
       state.currentPage = action.payload;
-    }
+    },
+    setCategories(state, action: PayloadAction<Category[]>) {
+      state.categories = action.payload;
+    },
+    setLoadingCategories(state, action: PayloadAction<boolean>) {
+      state.loadingCategories = action.payload;
+    },
+    setLoadingProducts(state, action: PayloadAction<boolean>) {
+      state.loadingProducts = action.payload;
+    },
   }
 });
 
@@ -53,7 +64,10 @@ export const {
   setProducts,
   setSelectedProduct,
   updateFavoriteStatus,
-  setPage
+  setPage,
+  setCategories,
+  setLoadingCategories,
+  setLoadingProducts,
 } = exploreSlice.actions;
 
 export default exploreSlice.reducer;

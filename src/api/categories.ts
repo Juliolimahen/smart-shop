@@ -3,8 +3,12 @@ import type { Category } from '../types';
 
 export const categories: Category[] = categoriesData;
 
-export const getAllCategories = (): Category[] => {
-  return categories;
+export const getAllCategories = (): Promise<Category[]> => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(categories);
+    }, 500);
+  });
 };
 
 export const getCategoryName = (id: number): string =>

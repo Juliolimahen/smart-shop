@@ -1,5 +1,8 @@
 import React from 'react';
-import { getAllCategories } from '../../api/categories';
+import { useSelector } from 'react-redux';
+import { useLoadCategories } from '../../hooks/useLoadCategories';
+import type { RootState } from '../../redux/store';
+
 import { Tab, TabsContainer, TabsWrapper } from './styles';
 
 interface Props {
@@ -8,18 +11,21 @@ interface Props {
 }
 
 export const CategoryTabs: React.FC<Props> = ({ activeCategory, onSelectCategory }) => {
-  const categories = getAllCategories();
+  useLoadCategories(); // dispara carregamento via Redux
+
+  const { categories, loadingCategories } = useSelector((state: RootState) => state.explore);
+
+  if (loadingCategories) {
+    return <div>Carregando categorias...</div>; // ou SkeletonTabs
+  }
 
   return (
     <TabsWrapper>
       <TabsContainer>
-        <Tab
-          $active={activeCategory === null}
-          onMouseEnter={() => onSelectCategory(null)}
-        >
+        <Tab $active={activeCategory === null} onMouseEnter={() => onSelectCategory(null)}>
           Todas as Categorias
         </Tab>
-        {categories.map(category => (
+        {categories.map((category) => (
           <Tab
             key={category.id}
             $active={activeCategory === category.id}
@@ -32,3 +38,5 @@ export const CategoryTabs: React.FC<Props> = ({ activeCategory, onSelectCategory
     </TabsWrapper>
   );
 };
+
+export default CategoryTabs;

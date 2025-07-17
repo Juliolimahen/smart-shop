@@ -1,4 +1,4 @@
-import type { Product } from '../../types';
+import type { Category, Product } from '../../types';
 
 export interface ExploreState {
   category: number | null;
@@ -10,6 +10,9 @@ export interface ExploreState {
   minPrice: number | null;
   maxPrice: number | null;
   orderByPrice: 'asc' | 'desc' | null;
+  categories: Category[];
+  loadingCategories: boolean;
+  loadingProducts: boolean;
 }
 
 export interface ProductsPayload {

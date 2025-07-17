@@ -3,16 +3,17 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../../redux/store';
 import Pagination from '../../Components/Pagination';
-import ProductList from '../../Components/ProductList';
 import useAppDispatch from '../../hooks/useAppDispatch';
+import ProductList from '../../Components/ProductList';
 import ProductSearch from '../../Components/ProductSearch';
 import { CategoryTabs } from '../../Components/CategoryTabs';
 import { ProductModal } from '../../Components/ProductModal';
+import { SkeletonGrid } from '../../Components/SkeletonGrid';
 import { useLoadProducts } from '../../hooks/useLoadProducts';
 import { useFilteredProducts } from '../../hooks/useFilteredProducts';
 import OrderByPriceSelector from '../../Components/OrderByPriceSelector';
-import { FilterLeft, FilterRight, FilterRow, Alert, Container } from './style';
 import PriceRangeFilter from '../../Components/PriceRangeFilter/PriceRangeFilter';
+
 import {
   setCategory,
   setSearchTerm,
@@ -20,11 +21,24 @@ import {
   setSelectedProduct
 } from '../../redux/explore/exploreSlice';
 
+import {
+  Container,
+  FilterRow,
+  FilterLeft,
+  FilterRight,
+  Alert
+} from './style';
+
 const ExploreProducts: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { category, searchTerm, currentPage, selectedProduct } = useSelector(
-    (state: RootState) => state.explore
-  );
+
+  const {
+    category,
+    searchTerm,
+    currentPage,
+    selectedProduct,
+    loadingProducts
+  } = useSelector((state: RootState) => state.explore);
 
   useLoadProducts();
   const { paginated, totalPages } = useFilteredProducts();
@@ -45,9 +59,15 @@ const ExploreProducts: React.FC = () => {
 
   return (
     <Container>
-      <ProductSearch searchTerm={searchTerm} onSearchChange={handlers.search} />
+      <ProductSearch
+        searchTerm={searchTerm}
+        onSearchChange={handlers.search}
+      />
 
-      <CategoryTabs activeCategory={category} onSelectCategory={handlers.category} />
+      <CategoryTabs
+        activeCategory={category}
+        onSelectCategory={handlers.category}
+      />
 
       <FilterRow>
         <FilterLeft>
@@ -58,12 +78,15 @@ const ExploreProducts: React.FC = () => {
         </FilterRight>
       </FilterRow>
 
-      {paginated.length === 0 ? (
-
+      {loadingProducts ? (
+        <SkeletonGrid />
+      ) : paginated.length === 0 ? (
         <Alert>Nenhum produto disponível para os critérios atuais.</Alert>
-
       ) : (
-        <ProductList products={paginated} onProductClick={handlers.select} />
+        <ProductList
+          products={paginated}
+          onProductClick={handlers.select}
+        />
       )}
 
       <Pagination
@@ -75,7 +98,10 @@ const ExploreProducts: React.FC = () => {
       />
 
       {selectedProduct && (
-        <ProductModal product={selectedProduct} onClose={handlers.closeModal} />
+        <ProductModal
+          product={selectedProduct}
+          onClose={handlers.closeModal}
+        />
       )}
     </Container>
   );

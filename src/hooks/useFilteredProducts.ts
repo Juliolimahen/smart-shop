@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
+import type { RootState } from '../redux/store';
 import { filterByCategory } from '../utils/filterByCategory';
 import { filterByPriceRange } from '../utils/filterByPriceRange';
 import { sortByPrice, sortByPriceDesc } from '../utils/sortByPrice';
-import type { RootState } from '../redux/store';
 
 export const useFilteredProducts = () => {
   const {
@@ -12,7 +12,7 @@ export const useFilteredProducts = () => {
     minPrice,
     maxPrice,
     orderByPrice,
-    currentPage
+    totalPages 
   } = useSelector((state: RootState) => state.explore);
 
   const searched = searchTerm.trim()
@@ -26,8 +26,5 @@ export const useFilteredProducts = () => {
   const filtered = filterByPriceRange(categorized, minPrice ?? 0, maxPrice ?? Infinity);
   const ordered = orderByPrice === 'desc' ? sortByPriceDesc(filtered) : sortByPrice(filtered);
 
-  const paginated = ordered.slice(currentPage * 8, (currentPage + 1) * 8);
-  const totalPages = Math.ceil(ordered.length / 8);
-
-  return { paginated, totalPages };
+  return { paginated: ordered, totalPages };
 };
