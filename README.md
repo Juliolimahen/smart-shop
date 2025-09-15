@@ -1,69 +1,78 @@
-# React + TypeScript + Vite
+# Desafio Técnico
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🛍️ Lista de Produtos - Interface com Favoritos
 
-Currently, two official plugins are available:
+## 🎯 Objetivo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Criar uma interface simples para exibição e manipulação de uma lista de produtos, utilizando dados mockados e simulação de requisição assíncrona.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Tecnologias Utilizadas
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) ou [Create React App](https://create-react-app.dev/)
+- [React Router](https://reactrouter.com/)
+- [Context API](https://reactjs.org/docs/context.html) ou [Redux](https://redux.js.org/)
+- [Tailwind CSS](https://tailwindcss.com/) ou [Material UI](https://mui.com/) (opcional)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📦 Funcionalidades
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 1. Exibição de Produtos
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Simulação de requisição com `Promise` e `setTimeout`
+- Tratamento de dados incompletos:
+  - Nome ausente → "Nome desconhecido"
+  - Preço ausente → "Preço não disponível"
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 2. Favoritar/Desfavoritar Produtos
+
+- Botão para adicionar/remover dos favoritos
+- Página exclusiva para produtos favoritados
+- Limite de 2 favoritos por categoria
+  - Ao favoritar o terceiro, o mais antigo é removido
+  - Produtos com múltiplas categorias contam em todas
+
+### 3. Modal de Detalhes
+
+- Exibição completa das informações do produto
+- Favoritar/desfavoritar diretamente no modal
+- Exibição de variantes (cor, tamanho, etc.)
+
+### 4. Filtros
+
+- Busca por nome e/ou categoria
+- Filtros adicionais opcionais (preço, estoque, variantes)
+
+### 5. Compartilhamento de Estado
+
+- Favoritos disponíveis entre componentes
+- Header fixo com contador de favoritos atualizado em tempo real
+
+### 6. TypeScript
+
+- Uso obrigatório de interfaces para tipagem dos dados
+
+---
+
+## ✨ Extras (Opcional)
+
+- Paginação ou carregamento infinito
+- Filtros avançados
+- Uso de bibliotecas externas
+- Estrutura de projeto organizada e componentes reutilizáveis
+
+
+---
+
+## 📦 Instalação
+
+```bash
+# Instale as dependências
+npm install
+
+# Rode o projeto
+npm run dev
